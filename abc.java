@@ -2,12 +2,12 @@ import static jdk.nashorn.internal.runtime.regexp.joni.Syntax.Java;
 
 public class abc {
     public static  void main(String[] args){
-        //
-        System.out.println('');
+        //helloworld教程 输出一个a字符
+        System.out.println('a');
     }
 }
 
-public class abcs {
+public class a1变量声明 {
     public static  void main(String[] args){
         //变量声明 同一个大括号内不允许有重复面变量名 byte数据类型后面的是变量名
         byte num;
@@ -15,17 +15,17 @@ public class abcs {
         int b;
         //赋值
         num =100;
+        System.out.println(num);//此时 num是byte类型的数据 100
     }
 }
 
-public class Tbcd {
+public class a2遍历声明赋值使用 {
     public static  void main(String[] args){
         //遍历声明 赋值 使用
         byte b1;
                 b1=100;
         System.out.println(b1);
                 short b2;
-
                 b2=200;
                 int i;
                 i=100000;
@@ -34,24 +34,23 @@ public class Tbcd {
     }
 }
 
-public class abc {
+public class a3大数据转小数据 {
     public static  void main(String[] args){
         //
         int i=10;
-
         String name="123";
-
         //大数据转小数据
         byte b=(byte) i;
-        //数据取整的时候才能用不然会数据丢失
+        //数据取整的时候才能用不然会数据丢失 就是说不能有小数点的数据 除非不要小数点
+        System.out.println(b);
     }
 }
-public class a1 {
+public class a4不同数据类型只能拿大的取接收小的布尔值不参与运算 {
     public static  void main(String[] args){
        int a=10;
        int b=20;
        int i=a+b;
-       System.out.println(i);
+       System.out.println(i);//结果：30
 
        int e=10;
        double d=20.1;
@@ -66,17 +65,17 @@ public class a1 {
 
         int n=10;
         boolean m=true;
-        int k=n+m;//布尔值不参与怕运算
+        int k=n+m;//布尔值不参与运算
         System.out.println(k);
 
         int o=10;
         String str="20";
-        System.out.println(str+h);//2010
+        System.out.println(str+o);//2010 这里是先用字符加数字 所以字符在前面 结果是2010如果字符在后面是1020
 
         int y=10;
         int u=20;
-        System.out.println("y+u="+y+u);//先乘除后加减
-        System.out.println("y+u="+(y+u));//先乘除后加减
+        System.out.println("y+u="+y+u);//先乘除后加减    结果是1020
+        System.out.println("y+u="+(y+u));//先乘除后加减   结果是30
     }
 }
 public class abc {
@@ -354,37 +353,7 @@ public class abc {
     }
 }
 
-public class 流程控制 {
-    public static  void main(String[] args){
-        //输入
-        int a = 10;
-        //a=20;
-        System.out.println(a);
-        //1准备输入工具
-        java.util.Scanner mingzidingyi = new java.util.Scanner(System.in);
-        //2.准备输入入口
-        //a.整型数据
-        System.out.println("请输入一个数字");
-         //mingzidingyi.nextInt();//将这个代码看作用户输入的数据
-        //nextInt是整数型数据
-        int num = mingzidingyi.nextInt();
-        System.out.println(num);//用户输入的这个可以用来做其他的运算
-        //例如
-        System.out.println(num+10);
-         //这个就是当int a =10；执行完之后还没有结束 要再这里输入一个东西才能运行结束 这里是int输入数字
-        System.out.println("带小数的数据");
-        double num1=mingzidingyi.nextDouble();
-        System.out.println(num1+10);
-        System.out.println("字符");
-        String name=mingzidingyi.next();
-        String name1=(name+10);
-        System.out.println(name1);
-        //nextLine是读取一整行的数据
-        String name2=mingzidingyi.nextLine();
-        System.out.println(name2);
-        //nextLine有缺点 点击空格的时候会直接结束
-    }
-}
+
 //分支和选择分支
 //单分支
 public class 单分支 {
@@ -398,5 +367,127 @@ public class 单分支 {
             System.out.println("奖励一百亿");
         }
     }
+}
+
+public class 双分支判断 {
+    public static  void main(String[] args){
+        //
+        //当你其中一个条件成立 是不会往下执行代码的 这是按顺序执行代码的
+        java.util.Scanner xiaoming=new java.util.Scanner(System.in);
+        System.out.println("请输入小明的java成绩");
+        double chengji=xiaoming.nextDouble();
+        //如果上面输入的成绩大于90就进入第一个判断
+        //（）小括号是条件 大括号是代码块
+         if(chengji>90)
+         {
+             System.out.println("奖励网红一位");
+         }
+         //如果是90分以下就进入第二个判断
+         else{
+             System.out.println("奖励少妇一位");
+         }
+    }
+}
+public class 多分支判断 {
+    public static  void main(String[] args){
+        //
+        java.util.Scanner xiaoming=new java.util.Scanner(System.in);
+        System.out.println("请输入小明的java成绩");
+        double chengji=xiaoming.nextDouble();
+//当你其中一个条件成立 是不会往下执行代码的 这是按顺序执行代码的
+        if(chengji==100){
+            System.out.println("奖励九百九十九百亿");
+        } else if (chengji>90)
+        {
+            System.out.println("奖励网红一名");
+        }else if (chengji>70){
+            System.out.println("奖励少妇一名");
+        }else if (chengji>60){
+            System.out.println("奖励空气");
+        }
+
+    }
+}
+
+public class 流程控制 {
+    public static  void main(String[] args){
+        //输入
+        int a = 10;
+        //a=20;
+        System.out.println(a);
+        //1准备输入工具
+        java.util.Scanner mingzidingyi = new java.util.Scanner(System.in);
+        //2.准备输入入口
+        //a.整型数据
+        System.out.println("请输入一个数字");
+        //mingzidingyi.nextInt();//将这个代码看作用户输入的数据
+        //nextInt是整数型数据
+        int num = mingzidingyi.nextInt();
+        System.out.println(num);//用户输入的这个可以用来做其他的运算
+        //例如
+        System.out.println(num+10);
+        //这个就是当int a =10；执行完之后还没有结束 要再这里输入一个东西才能运行结束 这里是int输入数字
+        System.out.println("带小数的数据");
+        double num1=mingzidingyi.nextDouble();
+        System.out.println(num1+10);
+        System.out.println("字符");
+        String name=mingzidingyi.next();
+        String name1=(name+10);
+        System.out.println(name1);
+        //nextLine是读取一整行的数据
+        String name2=mingzidingyi.nextLine();
+        System.out.println(name2);
+        //nextLine有缺点 点击空格的时候会直接结束
+    }
+}
+
+public class while循环 {
+    public static  void main(String[] args){
+        /*循环的类型分别有：
+        while
+            for
+                do-while
+                    foreach*/
+        //作用提高复用性和拓展性
+        //语法 while（循环条件）{代码块}
+        //原理：循环条件成立，则执行代码块。执行完代码块，会再次回到循环条件判断的位置
+        //如果条件依然成立，则再次执行代码块，直到循环条件不成立为止 寻呼那条件结束
+        /*控制循环次数
+        1循环因子
+            2循环条件
+                3循环因子值的改变*/
+        int i=0;//这个就是循环因子 执行这一行的时候i=0
+         while (i<5){ //执行这一行的时候i<5是成立的因为i等于0
+             System.out.println("奖励九百九十九百亿"+i);//这里有一个+i的情况下 结果里面会从0开始循环01234依次循环出来
+         i++;//循环银子值的改变 执行这个代码的时候这个i会++成1 因为0+1 1再回到461行 1小于5成立直到加到5停止条件不成立
+         }
+//这里会把sou输出五遍
+    }
+}
+public class while循环嵌套 {
+    public static  void main(String[] args){
+
+        /*
+            三行四列
+        *   ****
+        *   ****
+        *   ****
+        * */
+        int i =0;
+        while (i<3){//控制行数 i是行数的循环因子
+            //System.out.println("****");
+            //再写一个循环控制每行的星号数量
+            int j=0;
+            while (j<4){
+                System.out.print("*");//这里不用ln因为*号输出不能换行 要在同一行输出
+                j++;//这里循环四次就是****
+            }
+            System.out.println("*");//这个加ln是换行用的 当里面的 j 打印完了一行之后换行
+            i++;//这里循环三次就是*
+                //             *
+                //             *
+        }
+
+        }
 }
 
