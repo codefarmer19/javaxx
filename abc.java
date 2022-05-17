@@ -508,3 +508,20 @@ public class for循环 {
     }
 }
 
+
+//do-while语法：do{代码块} while(循环条件)
+//原理：先执行代码块，然后判断循环条件。如果条件成立则继续执行代码块。如果条件不成立，则循环结束。
+//特点 dowhile循环至少执行一次
+//使用场景 不确定循环次数的情况
+public class dowhile循环 {
+    //for循环对比while循环的优势是：将while循环的控制循环次数的三个要素总结到一个地方（循环因子; 循环条件; 循环因子值得改变 小括号就是循环因子得声明包括前面得东西要加;;）
+    public static  void main(String[] args) {
+            int i =0;
+        do{
+            System.out.println("hello java"+i); //结果是01234五条sou
+        i++;
+        } while(i<5);
+
+    }
+}
+
