@@ -441,6 +441,8 @@ public class 流程控制 {
     }
 }
 
+
+
 public class while循环 {
     public static  void main(String[] args){
         /*循环的类型分别有：
@@ -524,4 +526,93 @@ public class dowhile循环 {
 
     }
 }
+//跳转结构 break & continue
+//switch 不支持long、float double、boolean类型 浮点类型都不可以
+//用于结束当前switch
+public class switch用在结束前的break {
+    public static  void main(String[] args){
+        int i =1;
+        switch(i){
+            case 1:
+                System.out.println("字符");
+                break;//现在int是等于1 在这里break 但是 没写break的情况下会有case12两个结果
+            case 2:
+                System.out.println("字符2");
+                break;
+            case 3:
+                System.out.println("字符3");
+                break;
+            case 4:
+                System.out.println("字符4");
+                break;
+            default:
+                System.out.println("字符5");
+                break;
+
+        }
+    }
+}
+//用在循环内while，for，do-while,foreach
+//用于结束当前循环
+public class 用在循环内的break {
+    public static  void main(String[] args){
+        //老方法 需求输入-1的时候结束
+    /*java.util.Scanner input=new java.util.Scanner(System.in);//输入入口
+    boolean flag=true;//布尔值
+    while(flag){
+        System.out.println("请输入一个整数");
+        int num=input.nextInt();
+        if(num==-1)
+            flag=false;
+    }*/
+        while(true){
+            java.util.Scanner input=new java.util.Scanner(System.in);
+            System.out.println("请输入一个整数");
+            int num=input.nextInt();
+            if(num==-1)
+                break;//可以直接用break结束循环
+        }
+        //嵌套里有break的情况
+        //执行顺序 先执行 i=0 再执行i<3 然后大括号 然后i++
+        for(int i=0;i<3;i++){
+            for (int j=0;j<5;j++) { //i=0的情况 j会从0-4走一遍 等于1一遍 2一遍
+                System.out.println(j);//输出结果是三遍01234
+                if(j==3){
+                    break;//立即结束当前（break外层的）循环 家上这个的情况下循环走到3就立即结束 不会走到4
+                //此时结果是0123
+                //如果把上面的sou放在break下面的话 结果就是012 因为j==3没来得及执行
+                }
+            }
+        }
+
+
+
+
+        //如果有需求 j==3结束外循环
+        for(int i=0;i<3;i++){
+            for (int j=0;j<5;j++) {
+                System.out.println(j);
+                if(j==3){
+                    i=4;
+                    break;//这是简单的方式结束外循环
+                }
+            }
+        }
+        //另外的方式结束外循环
+        boolean flag=false;
+        for(int i=0;i<3;i++){
+            for (int j=0;j<5;j++) {
+                System.out.println(j);//0123
+                if(j==3){
+                    flag=true;
+                break;
+                }
+            }
+            if(flag)
+                break;
+        }
+    }
+}
+
+
 
