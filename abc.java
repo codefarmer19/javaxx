@@ -613,6 +613,15 @@ public class 用在循环内的break {
         }
     }
 }
-
-
+// 2.continue
+// 1.用于结束本次循环，直接进入下一循环
+public class continue循环 {
+    public static  void main(String[] args){
+        for(int i=0;i<5;i++){
+            if(i==2)
+                continue;//立即结束本次（i==2）循环，进入下一次循环
+            System.out.println(i);//0134
+        }
+    }
+}
 
