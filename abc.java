@@ -625,3 +625,84 @@ public class continue循环 {
     }
 }
 
+public class 数组说明 {
+    public static  void main(String[] args){
+        数组就是存储数据的
+                数组概念：数组是用于存储数据的长度固定的容器，保证多个数据的数据类型一致
+                1、创建数组的时候，必须指定长度
+                2、数组再创建的时候，需要指定的数据类型
+                3、数组是有循序的（位置的顺序）
+                4数组长度确定了就不能修改
+        数组的使用
+            数组的定义
+                    1、动态初始化
+                            语法：
+                                a.数组的声明
+                                    数据类型 [] 数组名;//数组名是自定义的
+                                b.数组空间的开辟
+                                        数组名=new 数据类型 [数组长度];
+                                二合一：数据类型[] 数组名=new 数据而理性[数组长度];
+                    2、静态初始化
+                            数组的操作
+                                1、存值
+                                        数组名[角标]=值;
+                                            a.值要匹配数组的数据类型
+                                2、取值
+                                        数组名[角标]
+                                3、数组的特性
+                                            a.数组存在默认值 默认值在动态初始化不允许更改 静态可以
+                                                整型数组默认：0
+                                                浮点型数组：0.0
+                                                Sring: null;
+                                                boolean: false;
+                                                char:空白符 0或\u000表示为空
+                                4、数组越界
+                                            不能用超过定义的数组
+
+    }
+}
+
+public class 数组动态初始化 {
+    public static  void main(String[] args){
+        int[] arrs;//开辟空间
+        arrs =new int [5];//为arrs开辟五个连续空间用来存数据
+        //将10 20 50 存到数组中
+        //01234
+        arrs[0]=10;//将10存在arrs的第一个位置 //这是存值
+        arrs[1]=20;//将20存在arrs的第二个位置
+        arrs[4]=50;//将50存在arrs的第五个位置
+        System.out.println(arrs);//[I@15DB9742 这个输出结果是一个地址
+        // 也可以这么写 int num = arrs[0];   //将数组中第一个值赋给num
+        //System.out.println("数组中第一个值："+num);
+        System.out.println("数组中第一个值："+arrs[0]);//取数组中第一个值 如果前面没有复制的话 不会报错 会是0
+        //循环练习
+        for(int i=0;i<10;i++){
+            arrs[i]=i+1;//这个循环一直循环到十次就直接是arrs[9]=10;
+        }
+        for(int i=0;i<10;i++){
+            System.out.println("数组中第一个值："+arrs[i]);
+        }
+    }
+}
+public class 数组动态初始化练习 {
+    public static  void main(String[] args){
+        java.util.Scanner input=new  java.util.Scanner(System.in);
+        String[] names=new String[5];//五个学生姓名的数组
+        double[] scores=new double[5];//五个学生成绩的数组
+        //通过数组的索引一一对应 姓名和成绩
+        for(int i=0;i<5;i++){
+            System.out.println("请输入姓名");
+            String name=input.next();
+            System.out.println("请输入成绩");
+            double score=input.nextDouble();
+            //需要将姓名和成绩存起来(数组)
+            names[i]=name;
+            scores[i]=score;
+        }
+        //信息展示
+        for(int i=0;i<5;i++){
+            System.out.println(names[i]+"的成绩为"+ scores[i]);
+        }
+    }
+}
+
