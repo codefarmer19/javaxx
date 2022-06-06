@@ -705,4 +705,23 @@ public class 数组动态初始化练习 {
         }
     }
 }
+//静态初始化数组（在创建数组的同时 将数据指定完成）
+       /* a.
+            数组类型[] 数组名；
+            数组名=new 数组类型[]{数据1,数据2，。。3456};*/
+public  class 静态数组初始化{
+    public static  void main(String[] args) {
+        int[] arrs;
+        //默认值方括号不能写长度
+        arrs=new int[]{3,5,8};//相当于默认值
+        arrs[0]=20;//相当于修改值 0就会变成20
+        //长度是3意为角标的范围是0-2
+        System.out.println(arrs[0]);//3
+        System.out.println(arrs[0]);//5
+        System.out.println(arrs[0]);//8
+    }
+}
+/*动态和静态的使用场景
+    在创建数组的时候，不知道数据是什么就用动态初始化
+        在创建数组的时候，直到数据是什么 就用静态初始化*/
 
