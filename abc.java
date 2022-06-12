@@ -725,3 +725,97 @@ public  class 静态数组初始化{
     在创建数组的时候，不知道数据是什么就用动态初始化
         在创建数组的时候，直到数据是什么 就用静态初始化*/
 
+public  class 数组的遍历{
+    public static  void main(String[] args) {
+        /*int[] arrs = null;//初始化
+
+        arrs=new int[5];//长度已知
+        arrs[0]=12;
+        arrs[1]=20;
+        arrs[4]=25;
+*/
+       // System.out.println(arrs.length);//5 因为前面定义了int[5]
+        //上面是动态数组
+        int[] arrs1={2,4,5,8};
+        System.out.println(arrs1.length);//4 四个数据
+        // 遍历数组的写法
+       for (int i=0;i<arrs1.length;i++){
+           System.out.println(arrs1[i]);
+       }
+    }
+}
+
+public  class 数组的内存{
+    public static  void main(String[] args) {
+
+//     int num =10;
+//     int[] arrs=null;
+//     double[] arrays2=new double[5];//动态数组
+//     arrays2[0]=12.5;
+//     int[] arrs3={2,5,7};//静态数组
+        double [] arrs2=new double[3];
+        arrs2[0]=12.5;
+        arrs2[1]=1;
+        arrs2[2]=3;
+        double[] arrs3=arrs2;
+        arrs3[1]=5;//如果把arrs3的结果修改了arrs2也会跟着改
+        for(int i=0;i<arrs2.length;i++){
+            System.out.println(arrs2[i]);//12.5 1 3
+        }
+
+
+        for(int i=0;i<arrs3.length;i++){
+            System.out.println(arrs3[i]);//12.5 1 3
+        }
+    }
+}
+
+public  class 数组的操作{
+    public static  void main(String[] args) {
+        //找出数组的最大值
+        int[] arrs={23,5,8,76,3};//静态数组
+        int max=arrs[0];//将数组的第一个数据给到max
+        for(int i=1;i< arrs.length;i++){
+            //从数组的第二个值开始找
+            if(arrs[i]>max)
+                max=arrs[i];
+
+        }
+        System.out.println(max);//76
+
+        //找出数组的最大值及其下标
+        int[] arrs2={23,5,8,76,3};//静态数组
+        int max2=arrs2[0];//将数组的第一个数据给到max
+        int index=0;
+        int count=0;//偶数个数
+        for(int i=1;i< arrs2.length;i++){
+            //从数组的第二个值开始找
+            if(arrs2[i]>max)
+                max2=arrs2[i];
+                index=i;
+        }
+        System.out.println(index);//76
+
+        //求和
+        int[] arrs9={23,5,8,76,3};//静态数组
+        int sum=0;
+        for(int i=0;i<arrs9.length;i++){
+            sum+=arrs9[i];
+            if(arrs[i]%2==0){//这里是偶数个数
+                count++;//这里是偶数个数
+            }
+        }
+        System.out.println(sum);
+        System.out.println(sum/arrs9.length);//求平均数 如果要求小数在arrs前面加上 （double）
+
+
+        int[] arrs10={23,7,8,7,3,76};
+        //复制
+        //创建一个新数组，然后将他复制过去
+        int[] newArrs=new int[arrs.length];
+        //在一个数据一个数据的赋值
+        for(int i=0;i<arrs.length;i++){
+            newArrs[i]=arrs[i];
+        }
+    }
+}
